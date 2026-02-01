@@ -72,6 +72,13 @@
             border-left: 4px solid #ffc107;
             margin: 20px 0;
         }
+        .highlight-info {
+            background: #cce5ff;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #007AFF;
+            margin: 20px 0;
+        }
         .core-commitment {
             background: linear-gradient(135deg, #34C759 0%, #30D158 100%);
             color: white;
@@ -137,115 +144,168 @@
     <div class="container">
         <h1>Privacy Policy</h1>
         <p class="subtitle">MarAI Keyboard Application</p>
-        <p class="effective-date">Effective Date: January 1, 2026</p>
+        <p class="effective-date">Effective Date: February 1, 2026</p>
 
         <h2>1. Introduction</h2>
         <p>Deniz Maral ("Developer", "we", "us", or "our") operates the MarAI Keyboard application ("App"). This Privacy Policy explains how we handle information when you use our App.</p>
-        
+
         <div class="core-commitment">
-            🔒 Our core commitment: We do not collect, store, transmit, or share any of your personal data, keystrokes, or typed content.
+            🔒 Our core commitment: We do not collect your keystrokes or typed content. Your learned dictionary syncs only to your private iCloud account.
         </div>
 
         <h2>2. Information We Do NOT Collect</h2>
-        <p>To be absolutely clear, MarAI Keyboard does <strong>NOT</strong> collect, store, or transmit:</p>
+        <p>To be absolutely clear, MarAI Keyboard does <strong>NOT</strong> collect, store, or transmit to our servers:</p>
         <ul>
-            <li>Any text you type using the keyboard</li>
-            <li>Passwords, credit card numbers, or any sensitive information</li>
+            <li>The actual text you type using the keyboard</li>
+            <li>Passwords, credit card numbers, or any sensitive information you enter</li>
             <li>Your contacts, messages, or communication content</li>
             <li>Your location data</li>
             <li>Your browsing history or app usage patterns</li>
             <li>Personal identifiers or user profiles</li>
-            <li>Any data to external servers</li>
         </ul>
+        <div class="highlight">
+            <em>We have no servers that receive your data. We cannot see what you type.</em>
+        </div>
 
         <h2>3. Local Data Storage</h2>
-        <p>The App stores certain preferences and settings <strong>locally on your device only</strong>. This data never leaves your device and includes:</p>
-        
-        <h3>3.1 User Preferences</h3>
+        <p>The App stores certain preferences and settings <strong>locally on your device</strong>:</p>
+
+        <h3>3.1 User Preferences (Device Only)</h3>
         <ul>
             <li>Keyboard theme and appearance settings</li>
             <li>Language preferences and enabled languages</li>
             <li>Keyboard layout preferences</li>
             <li>Sound and haptic feedback settings</li>
             <li>Favorite emojis and emoji skin tone preferences</li>
-        </ul>
-        
-        <h3>3.2 Usage Data (Device-Only)</h3>
-        <ul>
-            <li>Recently used emojis (stored locally for quick access)</li>
             <li>Auto-correction and suggestion preferences</li>
         </ul>
-        
-        <div class="highlight">
-            <em>All this data is stored exclusively on your device using iOS's secure storage mechanisms (UserDefaults and App Group containers). We have no access to this data.</em>
+
+        <h3>3.2 Learned Dictionary (Synced via iCloud)</h3>
+        <p>The App maintains a personal dictionary to improve suggestions:</p>
+        <ul>
+            <li><strong>Learned Words:</strong> Words you use frequently (stored without the context in which they were typed)</li>
+            <li><strong>Word Patterns:</strong> Common word pairs to improve prediction (e.g., learning that you often type "thank" followed by "you")</li>
+        </ul>
+
+        <div class="highlight-info">
+            <strong>iCloud Sync:</strong> Your learned dictionary is synced to your private iCloud account using Apple's CloudKit service. This enables your personalized suggestions to be available across all your Apple devices signed into the same iCloud account.
         </div>
 
-        <h2>4. No Network Access Required</h2>
-        <p>MarAI Keyboard operates entirely offline. The keyboard extension does not request or require "Full Access" that would enable network connectivity. All features work without an internet connection:</p>
+        <h2>4. iCloud and CloudKit</h2>
+
+        <h3>4.1 What Is Synced</h3>
+        <p>The following data is stored in your <strong>private iCloud container</strong>:</p>
         <ul>
-            <li>Word suggestions use Apple's built-in UITextChecker (on-device)</li>
-            <li>Language detection uses Apple's Natural Language framework (on-device)</li>
-            <li>All processing happens locally on your device</li>
+            <li>Learned words and their usage frequency</li>
+            <li>Word pair patterns (bigrams) for improved predictions</li>
         </ul>
 
-        <h2>5. Third-Party Services</h2>
-        
-        <h3>5.1 Apple App Store</h3>
-        <p>If you make an in-app purchase (Pro version), the transaction is processed entirely by Apple. We do not receive, process, or store any payment information. Apple's Privacy Policy governs their handling of your payment data.</p>
-        
-        <h3>5.2 TestFlight (Beta Testing)</h3>
-        <p>If you use the App through Apple's TestFlight program, Apple may collect diagnostic and usage information according to their TestFlight Privacy Policy. This is managed by Apple, not by us.</p>
-        
-        <h3>5.3 Third-Party Libraries</h3>
+        <h3>4.2 Your Private iCloud Container</h3>
+        <p>This data is stored in a <strong>private CloudKit database</strong> accessible only to you:</p>
+        <ul>
+            <li>Only you can access this data through your iCloud account</li>
+            <li>We (the Developer) cannot access your private iCloud data</li>
+            <li>The data is encrypted by Apple both in transit and at rest</li>
+            <li>The data syncs only between devices signed into your iCloud account</li>
+        </ul>
+
+        <h3>4.3 Disabling iCloud Sync</h3>
+        <p>You can disable iCloud sync for the App:</p>
+        <ul>
+            <li>Go to <strong>Settings → [Your Name] → iCloud → Apps Using iCloud</strong></li>
+            <li>Toggle off <strong>MarAI Keyboard</strong></li>
+        </ul>
+        <p>When disabled, your learned dictionary will only be stored locally on each device.</p>
+
+        <h3>4.4 Deleting iCloud Data</h3>
+        <p>To delete your synced data from iCloud:</p>
+        <ul>
+            <li>Delete the app from all your devices, or</li>
+            <li>Use the "Clear Learned Words" option in the App's settings</li>
+        </ul>
+
+        <h2>5. On-Device Processing</h2>
+        <p>The keyboard's core features work entirely on your device:</p>
+        <ul>
+            <li>Word suggestions use on-device processing</li>
+            <li>Language detection uses Apple's Natural Language framework (on-device)</li>
+            <li>Auto-correction happens locally</li>
+        </ul>
+
+        <h2>6. Third-Party Services</h2>
+
+        <h3>6.1 Apple iCloud/CloudKit</h3>
+        <p>Your learned dictionary syncs via Apple's CloudKit service. Apple's handling of your iCloud data is governed by <a href="https://www.apple.com/legal/privacy/" target="_blank">Apple's Privacy Policy</a>. Key points:</p>
+        <ul>
+            <li>Data is encrypted end-to-end for most iCloud services</li>
+            <li>Apple cannot access data in your private CloudKit container</li>
+            <li>Data is stored on Apple's servers in accordance with Apple's privacy practices</li>
+        </ul>
+
+        <h3>6.2 Apple App Store</h3>
+        <p>If you make an in-app purchase (Pro version), the transaction is processed entirely by Apple. We do not receive, process, or store any payment information.</p>
+
+        <h3>6.3 TestFlight (Beta Testing)</h3>
+        <p>If you use the App through Apple's TestFlight program, Apple may collect diagnostic and usage information according to their TestFlight Privacy Policy.</p>
+
+        <h3>6.4 Third-Party Libraries</h3>
         <p>The App uses open-source libraries (such as EmojiKit) that operate entirely on-device and do not collect or transmit any user data.</p>
 
-        <h2>6. Children's Privacy</h2>
-        <p>The App does not collect personal information from anyone, including children under 13 years of age. Since we do not collect any data, the App is safe for users of all ages. Parents can feel confident that their children's typing and communications remain private.</p>
+        <h2>7. Children's Privacy</h2>
+        <p>The App does not collect personal information from anyone, including children under 13 years of age. The learned dictionary contains only words and word patterns, not personal information. Parents can feel confident that their children's communications remain private.</p>
 
-        <h2>7. Data Security</h2>
-        <p>Since we do not collect or store your data on any servers, there is no risk of data breaches affecting your information through our App. Local data stored on your device is protected by iOS's built-in security features, including:</p>
+        <h2>8. Data Security</h2>
+        <p>Your data is protected by multiple layers of security:</p>
         <ul>
-            <li>Device encryption</li>
-            <li>App sandboxing</li>
-            <li>Secure keychain storage</li>
+            <li><strong>Local Data:</strong> Protected by iOS's built-in security (device encryption, app sandboxing)</li>
+            <li><strong>iCloud Data:</strong> Encrypted by Apple in transit and at rest</li>
+            <li><strong>No Developer Access:</strong> We cannot access your local data or your private iCloud container</li>
         </ul>
 
-        <h2>8. Your Rights and Control</h2>
+        <h2>9. Your Rights and Control</h2>
         <p>You have complete control over your data:</p>
         <ul>
-            <li><strong>Delete Settings:</strong> You can reset all App preferences through the App's settings</li>
+            <li><strong>View Learned Words:</strong> See your learned dictionary in the App's settings</li>
+            <li><strong>Delete Individual Words:</strong> Remove specific words from your dictionary</li>
+            <li><strong>Clear All Data:</strong> Reset your entire learned dictionary</li>
+            <li><strong>Disable Sync:</strong> Turn off iCloud sync to keep data local only</li>
             <li><strong>Uninstall:</strong> Deleting the App removes all locally stored data</li>
-            <li><strong>No Account Required:</strong> There is no account to delete because we never create one</li>
+            <li><strong>No Account Required:</strong> There is no account with us to delete</li>
         </ul>
 
-        <h2>9. International Users</h2>
-        <p>The App is available internationally. Since we do not collect or transfer any personal data, there are no cross-border data transfer concerns. Your data stays on your device regardless of your location.</p>
-        
-        <h3>9.1 GDPR Compliance (European Users)</h3>
-        <p>For users in the European Economic Area: Since we do not collect any personal data, GDPR data subject rights (access, rectification, erasure, etc.) are automatically satisfied. There is no personal data for us to access, correct, or delete because we never collect it in the first place.</p>
-        
-        <h3>9.2 CCPA Compliance (California Users)</h3>
-        <p>For California residents: We do not sell personal information because we do not collect any. The App complies with CCPA by design through our zero-data-collection approach.</p>
+        <h2>10. International Users</h2>
+        <p>The App is available internationally. Your learned dictionary data may be stored on Apple's iCloud servers, which may be located in various countries. Apple's data handling practices and international transfers are governed by Apple's Privacy Policy.</p>
 
-        <h2>10. Changes to This Privacy Policy</h2>
+        <h3>10.1 GDPR Compliance (European Users)</h3>
+        <p>For users in the European Economic Area:</p>
+        <ul>
+            <li>We do not collect personal data on our servers</li>
+            <li>iCloud data is managed by Apple under their GDPR commitments</li>
+            <li>You can exercise data subject rights through iOS settings and the App</li>
+        </ul>
+
+        <h3>10.2 CCPA Compliance (California Users)</h3>
+        <p>For California residents: We do not sell personal information. The learned dictionary data synced to iCloud is not shared with or sold to third parties.</p>
+
+        <h2>11. Changes to This Privacy Policy</h2>
         <p>We may update this Privacy Policy from time to time. Any changes will be reflected in the "Effective Date" at the top of this document. We encourage you to review this Privacy Policy periodically. Continued use of the App after changes constitutes acceptance of the updated policy.</p>
 
-        <h2>11. Contact Us</h2>
+        <h2>12. Contact Us</h2>
         <p>If you have any questions, concerns, or requests regarding this Privacy Policy or our privacy practices, please contact us at:</p>
         <div class="contact-info">
             <p><strong>Email:</strong> maraikeyboard@gmail.com</p>
             <p><strong>Developer:</strong> Deniz Maral</p>
         </div>
 
-        <h2>12. Privacy Summary</h2>
+        <h2>13. Privacy Summary</h2>
         <div class="summary-box">
             <p><strong>In plain language:</strong></p>
             <ul>
                 <li>We don't see what you type</li>
-                <li>We don't collect your personal information</li>
-                <li>We don't send your data anywhere</li>
-                <li>Everything stays on your device</li>
-                <li>Your privacy is fully protected</li>
+                <li>We don't have servers that collect your data</li>
+                <li>Your learned words sync to YOUR private iCloud (not to us)</li>
+                <li>You can disable iCloud sync anytime</li>
+                <li>You can delete your learned dictionary anytime</li>
             </ul>
         </div>
 
